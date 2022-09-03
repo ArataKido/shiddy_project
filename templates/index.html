@@ -1,18 +1,14 @@
 {% extends 'layout/layout.html' %}
 
-{% block title %}
-KILLNET73 - Создание сайтов
-{% endblock %}
-
-
 {% block content %}
     <!-- slider area start  -->
     <div id="slider" class="slider__area red-bg position-relative fix">
         <div class="slider__social position-absolute">
             <ul>
-                {% for link in social_link %}
-                    <li><a href="{{ link.link }}">{{ link.title }}</a></li>
-                {% endfor %}
+                <li><a href="#">VK</a></li>
+                <li><a href="#">Whatsapp</a></li>
+                <li><a href="#">Telegram</a></li>
+                <li><a href="#">Kwork</a></li>
             </ul>
         </div>
         <div class="slider__shape">
@@ -26,7 +22,7 @@ KILLNET73 - Создание сайтов
                 <div class="col-xl-6 col-md-12">
                     <div class="slider__content">
                         <h1>Есть идея? Мы поможем</h1>
-                        <h2>Веб-студия<br><span>KILLNET.73</span></h2>
+                        <h2>Веб-студия<br><span>KillNet73</span></h2>
                         <div class="slider__btn">
                             <a href="#portfolio" class="m-btn mr-15 smooth-scroll">Наши работы</a>
                             <a href="#contact" class="slider__envelope smooth-scroll"><i
@@ -37,7 +33,6 @@ KILLNET73 - Создание сайтов
             </div>
         </div>
     </div>
-    </div>
     <!-- slider area end  -->
     <!-- about area start  -->
     <div id="about" class="about__area theme-bg pt-120 pb-85">
@@ -45,20 +40,21 @@ KILLNET73 - Создание сайтов
             <div class="row">
                 <div class="col-xl-5">
                     <div class="about__heading mb-30">
-                        <h3>10+ Лет в разработке на python и не только.</h3>
+                        <h3>10 ЛЕТ В РАЗРАБОТКЕ ВЕБ-ПРОЕКТОВ</h3>
                     </div>
                 </div>
                 <div class="col-xl-7">
                     <div class="about__right mb-30">
                         <div class="work-done mr-60 mb-30">
                             <h4>100<span>%</span></h4>
-                            <p>работ сдано</p>
+                            <p>Работ завершено</p>
                         </div>
                         <div class="about__p">
                             <p>
-                                Мы команда с единым желанием разрабатывать продукт для клиентов
-                                создаем сайты, телеграм ботов, разрабатываем дизайн, занимаемся версткой.
-                                Любая работа нам по силам, мы открыты к сотрудничеству и совместной продуктивной работе.
+                                Мы делаем проекты любой сложности.<br>
+                                Мы ценим ваше время, поэтому сроки для нас - очень важно.<br>
+                                Мы верим в вашу идею и поэтому работаем строго по тех заданию<br>
+                                Мы - Killnet73, мы не обещаем - мы работаем.
                             </p>
                         </div>
                     </div>
@@ -70,16 +66,16 @@ KILLNET73 - Создание сайтов
     <!-- service area start  -->
     <div class="service__area position-relative grey-bg pt-120 pb-60">
         <div class="service__back-text">
-            <span>ПРОЕКТЫ</span>
+            <span>Проекты</span>
         </div>
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-xl-7 col-lg-10">
                     <div class="section__title mb-70 text-center">
-                        <h3>Что мы делаем?<span>.</span></h3>
-                        <p>Мы беремся за любой проект, и завершаем в сроки, разрабатываем сайты, поможем с реализацией идеи от тех задания до установки на сервер</p>
+                        <h3>Чем мы занимаемся<span>?</span></h3>
+                        <p></p>
                         <div class="back-text">
-                            <h2>Разработка</h2>
+                            <h2>Услуги</h2>
                         </div>
                     </div>
                 </div>
@@ -91,18 +87,15 @@ KILLNET73 - Создание сайтов
                             <img src="/static/assets/img/service/service-icon1.png" alt="">
                         </div>
                         <div class="service__content">
-                            <h4>Visual identity</h4>
-                            <p>For the sky was a dead
-                                black, apparent we had reached a great height in the atmosphere. </p>
+                            <h4>SEO-продвижение</h4>
+                            <p>Размещение рекламных объявлений, которые показываются при поиске в поисковиках, и соответствуют набранному запросу пользователя.
+                            </p>
                         </div>
                         <div class="service__contact text-center"
                              data-background="/static/assets/img/service/service-bg.jpg">
                             <div>
-                                <p>Apparently we had reached a great height in the
-                                    atmosphere, for the sky was a dead black, and the stars had ceased to twinkle.
-                                    By the same illusion which lifts the horizon of the sea to the level of the
-                                    spectator on a hillside, the sable.</p>
-                                <a class="smooth-scroll" href="#contact">contact now</a>
+                                <p>SEO-продвжиение нацелено на вывод вашего сайта на первые строчки в поисковиках. Сайт должен приводить вам новых клиентов и приносить прибыль! Ведь клиенты ищут вас и ваши услуги (товары) в интернете, а находят ваших конкурентов и покупают у них.</p>
+                                <a class="smooth-scroll" href="#contact">Связаться с нами</a>
                             </div>
                         </div>
                     </div>
@@ -113,18 +106,14 @@ KILLNET73 - Создание сайтов
                             <img src="/static/assets/img/service/service-icon2.png" alt="">
                         </div>
                         <div class="service__content">
-                            <h4>Carecter Design</h4>
-                            <p>Apparent we had reached a great height in the atmosphere, for the sky was a dead
-                                black. </p>
+                            <h4>Копирайтинг</h4>
+                            <p>Создание различного контента: изображения, видео, анимации и текста для ваших ресурсов. Ведение социальных сетей.</p>
                         </div>
                         <div class="service__contact text-center"
                              data-background="/static/assets/img/service/service-bg.jpg">
                             <div>
-                                <p>Apparently we had reached a great height in the
-                                    atmosphere, for the sky was a dead black, and the stars had ceased to twinkle.
-                                    By the same illusion which lifts the horizon of the sea to the level of the
-                                    spectator on a hillside, the sable.</p>
-                                <a class="smooth-scroll" href="#contact">contact now</a>
+                                <p>Каждому сайту требуется уникальный продающий текст. Уникальность текста обеспечивает благосклонность поисковых систем (Яндекс и Google терпеть не могут плагиата). Продающие тексты пишутся исключительно для людей. Такие тексты должны быть побуждающими к действию.</p>
+                                <a class="smooth-scroll" href="#contact">Связаться с нами</a>
                             </div>
                         </div>
                     </div>
@@ -135,18 +124,14 @@ KILLNET73 - Создание сайтов
                             <img src="/static/assets/img/service/service-icon3.png" alt="">
                         </div>
                         <div class="service__content">
-                            <h4>Graphic Design</h4>
-                            <p>Apparent we had reached a great height in the atmosphere, for the sky was a dead
-                                black. </p>
+                            <h4>Дизайн</h4>
+                            <p>Создание уникального дизайна для сайтов, интерфейсов для приложений, брендбуков, в частности логотипов, визиток и прочего.</p>
                         </div>
                         <div class="service__contact text-center"
                              data-background="/static/assets/img/service/service-bg.jpg">
                             <div>
-                                <p>Apparently we had reached a great height in the
-                                    atmosphere, for the sky was a dead black, and the stars had ceased to twinkle.
-                                    By the same illusion which lifts the horizon of the sea to the level of the
-                                    spectator on a hillside, the sable.</p>
-                                <a class="smooth-scroll" href="#contact">contact now</a>
+                                <p>Дизайн - это не только красивая и современная картина. Дизайн - это удобство пользователя в работе с сайтом или интерфейсом, это также и релевантность его запросам. Хороший дизайн содержит в себе максимальное удобство пользователя при работе с продуктам, интуаитивно понятную навигацию, а также гармоничные элементы сайта - кнопки, заголовки и т.д. - которые имеют определённый размер и цвет.</p>
+                                <a class="smooth-scroll" href="#contact">Связаться с нами</a>
                             </div>
                         </div>
                     </div>
@@ -157,18 +142,14 @@ KILLNET73 - Создание сайтов
                             <img src="/static/assets/img/service/service-icon4.png" alt="">
                         </div>
                         <div class="service__content">
-                            <h4>Website design</h4>
-                            <p>For the sky was a dead
-                                black, apparent we had reached a great height in the atmosphere. </p>
+                            <h4>Разработка</h4>
+                            <p>Создание сайтов, веб-приложений, мобильных приложений и другого программного обеспечения, необходимого для осуществления потребностей клиента.</p>
                         </div>
                         <div class="service__contact text-center"
                              data-background="/static/assets/img/service/service-bg.jpg">
                             <div>
-                                <p>Apparently we had reached a great height in the
-                                    atmosphere, for the sky was a dead black, and the stars had ceased to twinkle.
-                                    By the same illusion which lifts the horizon of the sea to the level of the
-                                    spectator on a hillside, the sable.</p>
-                                <a class="smooth-scroll" href="#contact">contact now</a>
+                                <p>Мы можем разработать абсолютно любой проект с вашим готовым ТЗ будь то информационный или новостной портал или абсолютно новый проект, аналогов которого нет на рынке! Поделитесь с нами вашей идеей и мы поможем её реализовать. Также мы можем помочь вам с разработкой технического задания для вашего сайта.</p>
+                                <a class="smooth-scroll" href="#contact">Связаться с нами</a>
                             </div>
                         </div>
                     </div>
@@ -183,60 +164,10 @@ KILLNET73 - Создание сайтов
             <div class="row no-gutters">
                 <div class="col-xl-4 col-lg-4 col-md-6">
                     <div class="portfolio__item">
-                        <img src="assets/img/portfolio/portfolio1.jpg" alt="">
-                        <a class="portfolio__overlay popup-image" href="assets/img/portfolio/portfolio1.jpg">
+                        <img src="" alt="">
+                        <a class="portfolio__overlay popup-image" href="">
                             <div class="portfolio__overlay-icon">
-                                <i class="fal fa-plus"></i>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-6">
-                    <div class="portfolio__item">
-                        <img src="assets/img/portfolio/portfolio2.jpg" alt="">
-                        <a class="portfolio__overlay popup-image" href="assets/img/portfolio/portfolio2.jpg">
-                            <div class="portfolio__overlay-icon">
-                                <i class="fal fa-plus"></i>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-6">
-                    <div class="portfolio__item">
-                        <img src="assets/img/portfolio/portfolio3.jpg" alt="">
-                        <a class="portfolio__overlay popup-image" href="assets/img/portfolio/portfolio3.jpg">
-                            <div class="portfolio__overlay-icon">
-                                <i class="fal fa-plus"></i>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-6">
-                    <div class="portfolio__item">
-                        <img src="assets/img/portfolio/portfolio4.jpg" alt="">
-                        <a class="portfolio__overlay popup-image" href="assets/img/portfolio/portfolio4.jpg">
-                            <div class="portfolio__overlay-icon">
-                                <i class="fal fa-plus"></i>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-6">
-                    <div class="portfolio__item">
-                        <img src="assets/img/portfolio/portfolio5.jpg" alt="">
-                        <a class="portfolio__overlay popup-image" href="assets/img/portfolio/portfolio5.jpg">
-                            <div class="portfolio__overlay-icon">
-                                <i class="fal fa-plus"></i>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-6">
-                    <div class="portfolio__item">
-                        <img src="assets/img/portfolio/portfolio6.jpg" alt="">
-                        <a class="portfolio__overlay popup-image" href="assets/img/portfolio/portfolio6.jpg">
-                            <div class="portfolio__overlay-icon">
-                                <i class="fal fa-plus"></i>
+                                <i class="fal fa-plus"></i>-
                             </div>
                         </a>
                     </div>
@@ -251,11 +182,10 @@ KILLNET73 - Создание сайтов
             <div class="row justify-content-center">
                 <div class="col-xl-7 col-lg-10">
                     <div class="section__title mb-70 text-center">
-                        <h3>My Work Process<span>.</span></h3>
-                        <p>Apparently we had reached a great height in the atmosphere, for the sky was a dead black,
-                            and the stars had ceased to twinkle.</p>
+                        <h3>Стадии разработки<span>.</span></h3>
+                        <p>Мы планируем стадии разработки ваших WEB проектов на группы</p>
                         <div class="back-text">
-                            <h2>process</h2>
+                            <h2>Процессы</h2>
                         </div>
                     </div>
                 </div>
@@ -264,35 +194,29 @@ KILLNET73 - Создание сайтов
                 <div class="col-xl-3 col-lg-3 col-md-6">
                     <div class="process__item mb-30">
                         <span>01</span>
-                        <h4>inspiration Collect</h4>
-                        <p>For the sky was a dead black,
-                            and the stars had ceased to twinkle, apparently we had reached a great height in the
-                            atmosphere.</p>
+                        <h4>Техническое задание</h4>
+                        <p>Разработаем техническое задание для всех стадий разработки по вашему описанию проекта</p>
                     </div>
                 </div>
                 <div class="col-xl-3 col-lg-3 col-md-6">
                     <div class="process__item mb-30">
                         <span>02</span>
-                        <h4>project planning</h4>
-                        <p>Apparently we had reached a great height in the atmosphere, for the sky was a dead black,
-                            and the stars had ceased to twinkle.</p>
+                        <h4>Frontend разработка</h4>
+                        <p>Сделаем качественный дизай и веб верстку вашего проекта под ключ</p>
                     </div>
                 </div>
                 <div class="col-xl-3 col-lg-3 col-md-6">
                     <div class="process__item mb-30">
                         <span>03</span>
-                        <h4>instrument collect</h4>
-                        <p>For the sky was a dead black,
-                            and the stars had ceased to twinkle, apparently we had reached a great height in the
-                            atmosphere.</p>
+                        <h4>Backend разработка</h4>
+                        <p>Реализуем отказоустойчивый backend на django и не только</p>
                     </div>
                 </div>
                 <div class="col-xl-3 col-lg-3 col-md-6">
                     <div class="process__item mb-30">
                         <span>04</span>
-                        <h4>implementation</h4>
-                        <p>Apparently we had reached a great height in the atmosphere, for the sky was a dead black,
-                            and the stars had ceased to twinkle.</p>
+                        <h4>Презентация проекта</h4>
+                        <p>Выполняем заключительные этапы по работе и предоставляем вам презентацию проекта</p>
                     </div>
                 </div>
             </div>
@@ -302,17 +226,15 @@ KILLNET73 - Создание сайтов
     <!-- award area start  -->
     <div class="award__area theme-bg position-relative pt-120 pb-75 fix">
         <div class="award__back-text">
-            <span>qualification</span>
+            <span>Реалии</span>
         </div>
         <div class="container">
             <div class="row">
                 <div class="col-xl-6 col-lg-12">
                     <div class="award__left mb-30 pr-100">
-                        <h3>Get So many Awards
-                            in 10 years.</h3>
+                        <h3>Наш опыт за 10 лет</h3>
                         <div class="award__btn">
-                            <a href="team-details.html" class="m-btn mr-15">my Experienace</a>
-                            <a href="team-details.html" class="m-btn  red-btn mr-15">qualification</a>
+                            <a href="#" class="m-btn  red-btn mr-15">Читать далее...</a>
                         </div>
                     </div>
                 </div>
@@ -321,30 +243,26 @@ KILLNET73 - Создание сайтов
                         <div class="row">
                             <div class="col-xl-6 col-lg-6 col-md-6">
                                 <div class="award__item mb-40">
-                                    <h4>2010 /gaming</h4>
-                                    <p>Apparently we had reached a great height in the atmosphere, for the sky was a
-                                        dead.</p>
+                                    <h4>2010 / Начало пути </h4>
+                                    <p>Объединение команды интузиастов совместной целью, создания веб проектов</p>
                                 </div>
                             </div>
                             <div class="col-xl-6 col-lg-6 col-md-6">
                                 <div class="award__item mb-40">
-                                    <h4>2013 /Visual design</h4>
-                                    <p>For the sky was a
-                                        dead, apparently we had reached a great height in the atmosphere.</p>
+                                    <h4>2013 / Открытие своей веб школы</h4>
+                                    <p>Набирая junior разработчиков, мы обучаем их работать с боевыми проектами</p>
                                 </div>
                             </div>
                             <div class="col-xl-6 col-lg-6 col-md-6">
                                 <div class="award__item mb-40">
-                                    <h4>2016 /app design</h4>
-                                    <p>For the sky was a
-                                        dead, apparently we had reached a great height in the atmosphere.</p>
+                                    <h4>2016 / Создание своего хостинга</h4>
+                                    <p>Качественный VDS/VPS машины и организация VPN сетей</p>
                                 </div>
                             </div>
                             <div class="col-xl-6 col-lg-6 col-md-6">
                                 <div class="award__item mb-40">
-                                    <h4>2020 /illustration</h4>
-                                    <p>Apparently we had reached a great height in the atmosphere, for the sky was a
-                                        dead.</p>
+                                    <h4>2022 / 12 лет в разработке</h4>
+                                    <p>12 лет мы реализуем ваши проекты</p>
                                 </div>
                             </div>
                         </div>
@@ -354,158 +272,39 @@ KILLNET73 - Создание сайтов
         </div>
     </div>
     <!-- award area end -->
-    <!-- team area start  -->
-    <div id="team" class="team__area grey-bg pt-120 pb-120">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-xl-7 col-lg-10">
-                    <div class="section__title mb-70 text-center">
-                        <h3>My leaders<span>.</span></h3>
-                        <p>Apparently we had reached a great height in the atmosphere, for the sky was a dead black,
-                            and the stars had ceased to twinkle.</p>
-                        <div class="back-text">
-                            <h2>team</h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="team__active">
-                <div class="team__member mb-50">
-                    <div class="team__member-img">
-                        <a href="team-details.html"><img src="assets/img/team/t-01.jpg" alt=""></a>
-                    </div>
-                    <div class="team__member-content">
-                        <h4><a href="team-details.html">Rosalina D. Williamson</a></h4>
-                        <span>Founder</span>
-                        <p>Apparently we had reached a great height in the atmosphere, for the sky was a dead black,
-                            and the stars had ceased.
-                        </p>
-                    </div>
-                </div>
-                <div class="team__member mb-50">
-                    <div class="team__member-img">
-                        <a href="team-details.html"><img src="assets/img/team/t-02.jpg" alt=""></a>
-                    </div>
-                    <div class="team__member-content">
-                        <h4><a href="team-details.html">Tromalinkton Blender</a></h4>
-                        <span>CEO</span>
-                        <p>For the sky was a dead black,
-                            and the stars had ceased, apparently we had reached a great height in the atmosphere.
-                        </p>
-                    </div>
-                </div>
-                <div class="team__member mb-50">
-                    <div class="team__member-img">
-                        <a href="team-details.html"><img src="assets/img/team/t-03.jpg" alt=""></a>
-                    </div>
-                    <div class="team__member-content">
-                        <h4><a href="team-details.html">Diconda PIran Will</a></h4>
-                        <span>Digital Marketer</span>
-                        <p>Apparently we had reached a great height in the atmosphere, for the sky was a dead black,
-                            and the stars had ceased.
-                        </p>
-                    </div>
-                </div>
-                <div class="team__member mb-50">
-                    <div class="team__member-img">
-                        <a href="team-details.html"><img src="assets/img/team/t-04.jpg" alt=""></a>
-                    </div>
-                    <div class="team__member-content">
-                        <h4><a href="team-details.html">Hulk M. Kenbon</a></h4>
-                        <span>Designer</span>
-                        <p>Apparently we had reached a great height in the atmosphere, for the sky was a dead black,
-                            and the stars had ceased. </p>
-                    </div>
-                </div>
-                <div class="team__member mb-50">
-                    <div class="team__member-img">
-                        <a href="team-details.html"><img src="assets/img/team/t-05.jpg" alt=""></a>
-                    </div>
-                    <div class="team__member-content">
-                        <h4><a href="team-details.html">Phumdon H. Norman</a></h4>
-                        <span>Developer</span>
-                        <p>For the sky was a dead black,
-                            and the stars had ceased, apparently we had reached a great height in the atmosphere.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- team area end -->
-    <!-- video area start  -->
+    <!-- video area start
     <div class="video__area text-center" data-background="assets/img/bg/video-bg.jpg">
         <a class="video__link position-relative popup-video" href="https://www.youtube.com/watch?v=FpQIWrHeFXo">
             <img src="assets/img/bg/video-btn-bg.png" alt="">
             <span>play</span>
         </a>
     </div>
-    <!-- video area end -->
+    video area end -->
+    <style>
+        .round {
+            border-radius: 100px; /* Радиус скругления */
+            border: 3px solid; /* Параметры рамки */
+            box-shadow: 0 0 7px #666; /* Параметры тени */
+        }
+    </style>
     <!-- testimonial area start  -->
     <div class="testimonial__area grey-bg fix pt-120 pb-80">
         <div class="container">
             <div class="testimonial__active">
-                <div class="testimonial__item">
-                    <div class="testimonial__img position-relative mb-30">
-                        <img src="assets/img/testimonial/testimonial-border.png" alt="">
-                        <a href="team-details.html"><img src="assets/img/testimonial/testimonial-1.png" alt=""
-                                                         class="center-img"></a>
+                {% for answer in reward %}
+                    <div class="testimonial__item">
+                        <div class="testimonial__img position-relative mb-30">
+                            <img src="/static/assets/img/testimonial/testimonial-border.png" alt="">
+                            <img src="{{ answer.image.url }}" alt="{{ answer.title }}" height="300" width="260" class="center-img round">
+                        </div>
+                        <div class="testimonial__content mb-30">
+                            <h3>{{ answer.title }}</h3>
+                            <p>{{ answer.content }}</p>
+                            <h4>{{ answer.full_name }}</h4>
+                            <span>- {{ answer.company }}</span>
+                        </div>
                     </div>
-                    <div class="testimonial__content mb-30">
-                        <h3>As an award winning publicist I
-                            have tried many release.</h3>
-                        <p>This, as much as the quality of their products, is the reason I have decided to do
-                            business
-                            with them going forward.</p>
-                        <h4><a href="team-details.html">Rosalina D. William</a></h4>
-                        <span>- Founder or UXninja</span>
-                    </div>
-                </div>
-                <div class="testimonial__item">
-                    <div class="testimonial__img position-relative mb-30">
-                        <img src="assets/img/testimonial/testimonial-border.png" alt="">
-                        <a href="team-details.html"><img src="assets/img/testimonial/testimonial-2.png" alt=""
-                                                         class="center-img"></a>
-                    </div>
-                    <div class="testimonial__content mb-30">
-                        <h3>I
-                            have tried many release, as an award winning publicist.</h3>
-                        <p>This, as much as the quality of their products, is reason I have decided to do business
-                            with them going forward.</p>
-                        <h4><a href="team-details.html">Tromalinkton Blender</a></h4>
-                        <span>- CEO</span>
-                    </div>
-                </div>
-                <div class="testimonial__item">
-                    <div class="testimonial__img position-relative mb-30">
-                        <img src="assets/img/testimonial/testimonial-border.png" alt="">
-                        <a href="team-details.html"><img src="assets/img/testimonial/testimonial-3.png" alt=""
-                                                         class="center-img"></a>
-                    </div>
-                    <div class="testimonial__content mb-30">
-                        <h3>As an award winning publicist I
-                            have tried many release.</h3>
-                        <p>This, as much as the quality of products, is the reason I have decided to do business
-                            with them going forward.</p>
-                        <h4><a href="team-details.html">Rosalina D. William</a></h4>
-                        <span>- Founder or UXninja</span>
-                    </div>
-                </div>
-                <div class="testimonial__item">
-                    <div class="testimonial__img position-relative mb-30">
-                        <img src="assets/img/testimonial/testimonial-border.png" alt="">
-                        <a href="team-details.html"><img src="assets/img/testimonial/testimonial-4.png" alt=""
-                                                         class="center-img"></a>
-                    </div>
-                    <div class="testimonial__content mb-30">
-                        <h3>I
-                            have tried many release, as an award winning publicist.</h3>
-                        <p>This, as much as of their products, is the reason I have decided to do business
-                            with them going forward.</p>
-                        <h4><a href="team-details.html">Tromalinkton Blender</a></h4>
-                        <span>- CEO</span>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </div>
@@ -517,11 +316,10 @@ KILLNET73 - Создание сайтов
                 <div class="row justify-content-center">
                     <div class="col-xl-7 col-lg-10">
                         <div class="section__title mb-70 text-center">
-                            <h3>Get In Touch<span>.</span></h3>
-                            <p>Apparently we had reached a great height in the atmosphere, for the sky was a dead
-                                black, and the stars had ceased to twinkle.</p>
+                            <h3>Обратная связь<span>.</span></h3>
+                            <p>Мы открыты для сотрудничества, если у вас есть идея, мы помомжем ее реализовать, заполните поля и мы обязательно с вами свяжемся, спасибо что выбрали нас!</p>
                             <div class="back-text">
-                                <h2 class="color-grey">contact</h2>
+                                <h2 class="color-grey">контакты</h2>
                             </div>
                         </div>
                     </div>
@@ -531,43 +329,43 @@ KILLNET73 - Создание сайтов
                         <div class="row">
                             <div class="col-xl-6 col-lg-6 col-md-6">
                                 <div class="input-field">
-                                    <input type="text" placeholder="Enter your name">
+                                    <input type="text" placeholder="ваше имя">
                                     <i class="fal fa-user"></i>
                                 </div>
                             </div>
                             <div class="col-xl-6 col-lg-6 col-md-6">
                                 <div class="input-field">
-                                    <input type="text" placeholder="info@webmail....">
+                                    <input type="text" placeholder="электронная почта">
                                     <i class="fal fa-envelope"></i>
                                 </div>
                             </div>
                             <div class="col-xl-6 col-lg-6 col-md-6">
                                 <div class="input-field">
-                                    <input type="number" placeholder="Enter your phone number">
+                                    <input type="number" placeholder="Номер телефона">
                                     <i class="fal fa-phone"></i>
                                 </div>
                             </div>
                             <div class="col-xl-6 col-lg-6 col-md-6">
                                 <div class="input-field">
                                     <select required>
-                                        <option value="" disabled selected>Select your subject</option>
-                                        <option value="0">graphic design</option>
-                                        <option value="1">web design</option>
-                                        <option value="1">digital marketing</option>
-                                        <option value="1">SEO</option>
+                                        <option value="" disabled selected>Тип проекта</option>
+                                        <option value="0">Графический дизайн</option>
+                                        <option value="1">Разработка сайта</option>
+                                        <option value="2">Администрирование сервера</option>
+                                        <option value="3">SEO</option>
                                     </select>
                                     <i class="fal fa-arrow-down"></i>
                                 </div>
                             </div>
                             <div class="col-xl-12 col-lg-12 col-md-12">
                                 <div class="input-field">
-                                        <textarea name="message" placeholder="Enter your message" id="message" cols="30"
+                                        <textarea name="message" placeholder="описание" id="message" cols="30"
                                                   rows="10"></textarea>
                                     <i class="fal fa-edit"></i>
                                 </div>
                             </div>
                             <div class="contact__btn">
-                                <a href="#" class="m-btn  red-btn theme-color">submit now</a>
+                                <a href="#" class="m-btn  red-btn theme-color">Отправить</a>
                             </div>
                         </div>
                     </form>
