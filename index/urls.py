@@ -4,5 +4,6 @@ from django.urls import path
 app_name = 'index'
 
 urlpatterns = [
-    path('', Index.as_view(), name='index')
+    path('', Index.as_view(), name='index'),
+    path('blog/', Blog.as_view(), name='blog')
 ]
