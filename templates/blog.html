@@ -12,11 +12,11 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="page__title-content mt-100">
-                        <h2>Our Blog</h2>
+                        <h2>Наш блог</h2>
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Blog</li>
+                                <li class="breadcrumb-item"><a href="{% url 'index:index' %}">Главная</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Наш блог</li>
                             </ol>
                         </nav>
                     </div>
@@ -31,361 +31,79 @@
             <div class="row">
                 <div class="col-xl-8 col-lg-8">
                     <div class="blog__wrapper mr-50">
-                        <div class="blog__item-2 mb-50 fix">
-                            <div class="blog__thumb-2 fix">
-                                <a href="blog-details.html"><img src="assets/img/blog/blog-2.jpg" alt=""></a>
-                            </div>
-                            <div class="blog__content-2">
-                                <div class="blog__meta-2 mb-15 d-sm-flex align-items-center">
-                                    <div class="blog__user pr-20 mr-20">
-                                        <a href="#">
-                                            <img src="assets/img/blog/user/user-1.jpg" alt="">
-                                            <h6>Jake Weary</h6>
-                                        </a>
-                                    </div>
-                                    <div class="blog__date">
-                                        <span>23 June 2020</span>
-                                    </div>
+                        {% for serv in post %}
+                            <div class="blog__item-2 mb-50 fix">
+                                <div class="blog__thumb-2 fix">
+                                    <a href="{% url 'index:blog-detail' serv.id %}"><img src="{{ serv.image.url }}" alt="{{ serv.title }}"></a>
                                 </div>
-                                <h3><a href="blog-details.html">Businesses Are Thriving, Societies Are Not. Time for
-                                    Urgent Change</a></h3>
-                                <p>I don't want no agro say chimney pot plastered bamboozled arse Why dropped a
-                                    clanger cheeky bloke, Eaton crikey morish me old mucker cuppa[...]</p>
-                                <div class="blog__btn d-sm-flex justify-content-between">
-                                    <div class="blog__btn">
-                                        <a href="blog-details.html#read-more" class="link-btn-2">
-                                            Read More
-                                            <i class="fal fa-long-arrow-right"></i>
-                                            <i class="fal fa-long-arrow-right"></i>
-                                        </a>
+                                <div class="blog__content-2">
+                                    <div class="blog__meta-2 mb-15 d-sm-flex align-items-center">
+                                        <div class="blog__user pr-20 mr-20">
+                                            <a href="{% url 'index:blog-detail' serv.id %}">
+                                                <img src="/static/assets/img/blog/user/user-1.jpg" width="15" alt="{{ serv.title }}">
+                                                <h6>{{ serv.author }}</h6>
+                                            </a>
+                                        </div>
+                                        <div class="blog__date">
+                                            <span>{{ serv.date }}</span>
+                                        </div>
                                     </div>
-                                    <div class="blog__comment">
-                                        <a href="blog-details.html#comments">
-                                            <i class="far fa-comments"></i>
-                                            Comments
-                                        </a>
+                                    <h3><a href="{% url 'index:blog-detail' serv.id %}">{{ serv.title }}</a></h3>
+                                    <p>{{ serv.short_content|truncatechars:300 }}</p>
+                                    <div class="blog__btn d-sm-flex justify-content-between">
+                                        <div class="blog__btn">
+                                            <a href="{% url 'index:blog-detail' serv.id %}" class="link-btn-2">
+                                                Читать дальше
+                                                <i class="fal fa-long-arrow-right"></i>
+                                                <i class="fal fa-long-arrow-right"></i>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="blog__item-2 mb-50 fix">
-                            <div class="blog__thumb-2 fix p-relative">
-                                <a href="blog-details.html"><img src="assets/img/blog/blog-3.jpg" alt=""></a>
-                                <div class="blog__play p-absolute">
-                                    <a class="popup-video" href="https://youtu.be/v6E4GLDy1NU" data-fancybox><i
-                                            class="fal fa-play"></i></a>
-                                </div>
-                            </div>
-                            <div class="blog__content-2">
-                                <div class="blog__meta-2 mb-15 d-sm-flex align-items-center">
-                                    <div class="blog__user pr-20 mr-20">
-                                        <a href="#">
-                                            <img src="assets/img/blog/user/user-2.jpg" alt="">
-                                            <h6>Weir Doe</h6>
-                                        </a>
-                                    </div>
-                                    <div class="blog__date">
-                                        <span>23 June 2020</span>
-                                    </div>
-                                </div>
-                                <h3><a href="blog-details.html">The Importance of Instagram Metrics and Where to
-                                    Find Them!</a></h3>
-                                <p>I don't want no agro say chimney pot plastered bamboozled arse Why dropped a
-                                    clanger cheeky bloke, Eaton crikey morish me old mucker cuppa[...]</p>
-                                <div class="blog__btn d-sm-flex justify-content-between">
-                                    <div class="blog__btn">
-                                        <a href="blog-details.html#read-more" class="link-btn-2">
-                                            Read More
-                                            <i class="fal fa-long-arrow-right"></i>
-                                            <i class="fal fa-long-arrow-right"></i>
-                                        </a>
-                                    </div>
-                                    <div class="blog__comment">
-                                        <a href="blog-details.html#comments">
-                                            <i class="far fa-comments"></i>
-                                            Comments
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="blog__quote mb-50 p-relative white-bg fix">
-                            <div class="blog__quote-line">
-                                <img class="line-1" src="assets/img/icon/blog/line-1.png" alt="">
-                                <img class="line-2" src="assets/img/icon/blog/line-2.png" alt="">
-                            </div>
-                            <div class="quote mb-10">
-                                <i class="fal fa-quote-right"></i>
-                            </div>
-                            <div class="quote-2 p-absolute">
-                                <img src="assets/img/icon/blog/quote-2.png" alt="">
-                            </div>
-                            <blockquote>
-                                <p>Tosser argy-bargy mush loo at public school Elizabeth up the duff buggered
-                                    chinwag on your bike mate don't get shirty with me super, Jeffrey bobby Richard
-                                    cheesed off spend a penny a load of old tosh blag horse.</p>
-                            </blockquote>
-                            <h4>Sarowar Jahan</h4>
-                        </div>
-                        <div class="blog__item-2 mb-50 fix">
-                            <div class="blog__thumb-2 fix p-relative">
-                                <a href="blog-details.html"><img src="assets/img/blog/blog-4.jpg" alt=""></a>
-                            </div>
-                            <div class="blog__content-2">
-                                <div class="blog__meta-2 mb-15 d-sm-flex align-items-center">
-                                    <div class="blog__user pr-20 mr-20">
-                                        <a href="#">
-                                            <img src="assets/img/blog/user/user-3.jpg" alt="">
-                                            <h6>Weir Doe</h6>
-                                        </a>
-                                    </div>
-                                    <div class="blog__date">
-                                        <span>23 June 2020</span>
-                                    </div>
-                                </div>
-                                <h3><a href="blog-details.html">We craft marketing & digital products that grow
-                                    businesses.</a></h3>
-                                <p>I don't want no agro say chimney pot plastered bamboozled arse Why dropped a
-                                    clanger cheeky bloke, Eaton crikey morish me old mucker cuppa[...]</p>
-                                <div class="blog__btn d-sm-flex justify-content-between">
-                                    <div class="blog__btn">
-                                        <a href="blog-details.html#read-more" class="link-btn-2">
-                                            Read More
-                                            <i class="fal fa-long-arrow-right"></i>
-                                            <i class="fal fa-long-arrow-right"></i>
-                                        </a>
-                                    </div>
-                                    <div class="blog__comment">
-                                        <a href="blog-details.html#comments">
-                                            <i class="far fa-comments"></i>
-                                            Comments
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="blog__quote blog__quote-2 mb-50 p-relative white-bg fix">
-                            <div class="blog__quote-line">
-                                <img class="line-3" src="assets/img/icon/blog/line-3.png" alt="">
-                                <img class="line-4" src="assets/img/icon/blog/line-4.png" alt="">
-                            </div>
-                            <div class="blog__link-icon">
-                                <i class="far fa-link icon_1"></i>
-                                <i class="far fa-link icon_2"></i>
-                            </div>
-                            <p>Oxford ruddy off his nut, bum bag is lavatory baking cakes bubble and squeak cheesed
-                                off what a plonker.!</p>
-                        </div>
-                        <div class="blog__item-2 mb-50 fix">
-                            <div class="blog__thumb-2 fix p-relative">
-                                <a href="blog-details.html"><img src="assets/img/blog/blog-5.jpg" alt=""></a>
-                            </div>
-                            <div class="blog__content-2">
-                                <div class="blog__meta-2 mb-15 d-sm-flex align-items-center">
-                                    <div class="blog__user pr-20 mr-20">
-                                        <a href="#">
-                                            <img src="assets/img/blog/user/user-4.jpg" alt="">
-                                            <h6>Indigo Violet</h6>
-                                        </a>
-                                    </div>
-                                    <div class="blog__date">
-                                        <span>23 June 2020</span>
-                                    </div>
-                                </div>
-                                <h3><a href="blog-details.html">TikTok Influencer Marketing: How to Work With
-                                    Influencers</a></h3>
-                                <p>I don't want no agro say chimney pot plastered bamboozled arse Why dropped a
-                                    clanger cheeky bloke, Eaton crikey morish me old mucker cuppa[...]</p>
-                                <div class="blog__btn d-sm-flex justify-content-between">
-                                    <div class="blog__btn">
-                                        <a href="blog-details.html#read-more" class="link-btn-2">
-                                            Read More
-                                            <i class="fal fa-long-arrow-right"></i>
-                                            <i class="fal fa-long-arrow-right"></i>
-                                        </a>
-                                    </div>
-                                    <div class="blog__comment">
-                                        <a href="blog-details.html#comments">
-                                            <i class="far fa-comments"></i>
-                                            Comments
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
+                        {% endfor %}
+                        <div class="pagination">
                         </div>
                         <div class="basic-pagination">
                             <ul>
                                 <li>
-                                    <a href="blog.html">
-                                        <i class="fal fa-long-arrow-left"></i>
-                                        <i class="fal fa-long-arrow-left"></i>
-                                    </a>
+                                    {% if page_obj.has_previous %}
+                                        <a href="?page={{ page_obj.previous_page_number }}">
+                                            <i class="fal fa-long-arrow-left"></i>
+                                            <i class="fal fa-long-arrow-left"></i>
+                                        </a>
+                                    {% endif %}
                                 </li>
+                                {% for i in page_obj.paginator.page_range %}
+                                    {% if page_obj.number == i %}
+                                        <li class="active">
+                                            <a href="?page={{ i }}">
+                                                <span>{{ i }}</span>
+                                                <span>{{ i }}</span>
+                                            </a>
+                                        </li>
+                                    {% elif i >= page_obj.number|add:-2 and i <= page_obj.number|add:2 %}
+                                        <li>
+                                            <a href="?page={{ i }}">
+                                                <span>{{ i }}</span>
+                                                <span>{{ i }}</span>
+                                            </a>
+                                        </li>
+                                    {% endif %}
+                                {% endfor %}
                                 <li>
-                                    <a href="blog.html">
-                                        <span>1</span>
-                                        <span>1</span>
-                                    </a>
-                                </li>
-                                <li class="active">
-                                    <a href="blog.html">
-                                        <span>2</span>
-                                        <span>2</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="blog.html">
-                                        <span>3</span>
-                                        <span>3</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="blog.html">
-                                        <i class="fal fa-ellipsis-h"></i>
-                                        <i class="fal fa-ellipsis-h"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="blog.html">
-                                        <i class="fal fa-long-arrow-right"></i>
-                                        <i class="fal fa-long-arrow-right"></i>
-                                    </a>
+                                    {% if page_obj.has_next %}
+                                        <a href="?page={{ page_obj.next_page_number }}">
+                                            <i class="fal fa-long-arrow-right"></i>
+                                            <i class="fal fa-long-arrow-right"></i>
+                                        </a>
+                                    {% endif %}
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-4 col-lg-4">
-                    <div class="blog__sidebar">
-                        <div class="sidebar__widget mb-50">
-                            <div class="sidebar__widget-content">
-                                <div class="search">
-                                    <form action="#">
-                                        <input type="text" placeholder="Search...">
-                                        <button type="submit"><i class="far fa-search"></i></button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="sidebar__widget mb-75">
-                            <div class="sidebar__widget-title mb-50">
-                                <h4>Recent News</h4>
-                            </div>
-                            <div class="sidebar__widget-content">
-                                <div class="rs-post">
-                                    <ul>
-                                        <li class="d-flex mb-20 align-items-center">
-                                            <div class="rs-thumb mr-15">
-                                                <a href="blog-details.html"><img src="assets/img/blog/rn-1.jpg"
-                                                                                 alt="rs-post"></a>
-                                            </div>
-                                            <div class="rs-text">
-                                                <h6><a href="blog-details.html">Best website traffice Booster with
-                                                    great tools.</a></h6>
-                                                <div class="rs-meta"><span>March 04, 2020</span> </div>
-                                            </div>
-                                        </li>
-                                        <li class="d-flex mb-20 align-items-center">
-                                            <div class="rs-thumb mr-15">
-                                                <a href="blog-details.html"><img src="assets/img/blog/rn-2.jpg"
-                                                                                 alt="rs-post"></a>
-                                            </div>
-                                            <div class="rs-text">
-                                                <h6><a href="blog-details.html">Google take latest step & Catch the
-                                                    black SEO</a></h6>
-                                                <div class="rs-meta"><span>March 02, 2020</span> </div>
-                                            </div>
-                                        </li>
-                                        <li class="d-flex mb-20 align-items-center">
-                                            <div class="rs-thumb mr-15">
-                                                <a href="blog-details.html"><img src="assets/img/blog/rn-3.jpg"
-                                                                                 alt="rs-post"></a>
-                                            </div>
-                                            <div class="rs-text">
-                                                <h6><a href="blog-details.html">How to become a best sale marketer
-                                                    in a year!</a></h6>
-                                                <div class="rs-meta"><span>March 01, 2020</span> </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="sidebar__widget mb-75">
-                            <div class="sidebar__widget-title mb-50">
-                                <h4>Categories</h4>
-                            </div>
-                            <div class="sidebar__widget-content">
-                                <div class="cat-link">
-                                    <ul>
-                                        <li><a href="blog-details.html">Web Design (6)</a></li>
-                                        <li><a href="blog-details.html"> Web Development (14)</a></li>
-                                        <li><a href="blog-details.html">Graphics (12)</a></li>
-                                        <li><a href="blog-details.html">IOS/Android Design (10)</a></li>
-                                        <li><a href="blog-details.html">App & Saas (4)</a></li>
-                                        <li><a href="blog-details.html">Fresh Products (9)</a></li>
-                                        <li><a href="blog-details.html">Saas Design (8)</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="sidebar__widget mb-60">
-                            <div class="sidebar__widget-title mb-50">
-                                <h4>Recent Comments</h4>
-                            </div>
-                            <div class="sidebar__widget-content">
-                                <div class="rs__comments">
-                                    <ul>
-                                        <li class="d-flex mb-25">
-                                            <div class="rs__comments-icon mr-30">
-                                                <i class="fal fa-comment"></i>
-                                            </div>
-                                            <div class="rs__comments-content">
-                                                <h6>Justin Case</h6>
-                                                <p>My lady mush hanky panky young delinquent.!</p>
-                                            </div>
-                                        </li>
-                                        <li class="d-flex mb-25">
-                                            <div class="rs__comments-icon mr-30">
-                                                <i class="fal fa-comment"></i>
-                                            </div>
-                                            <div class="rs__comments-content">
-                                                <h6>Eric Widget</h6>
-                                                <p>My lady mush hanky panky young delinquent.!</p>
-                                            </div>
-                                        </li>
-                                        <li class="d-flex mb-25">
-                                            <div class="rs__comments-icon mr-30">
-                                                <i class="fal fa-comment"></i>
-                                            </div>
-                                            <div class="rs__comments-content">
-                                                <h6>Penny Tool</h6>
-                                                <p>My lady mush hanky panky young delinquent.!</p>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="sidebar__widget mb-50">
-                            <div class="sidebar__widget-title mb-50">
-                                <h4>Popular Tags</h4>
-                            </div>
-                            <div class="sidebar__widget-content">
-                                <div class="tags">
-                                    <a href="blog-details.html">The Saas</a>
-                                    <a href="blog-details.html">Pix Saas Blog</a>
-                                    <a href="blog-details.html">Landing</a>
-                                    <a href="blog-details.html">UI/UX Design</a>
-                                    <a href="blog-details.html">Branding</a>
-                                    <a href="blog-details.html">Animation</a>
-                                    <a href="blog-details.html">Design</a>
-                                    <a href="blog-details.html">Ideas</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                {% include 'block/blog-sidebar.html' %}
             </div>
         </div>
     </section>

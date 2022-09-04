@@ -5,10 +5,9 @@
     <div id="slider" class="slider__area red-bg position-relative fix">
         <div class="slider__social position-absolute">
             <ul>
-                <li><a href="#">VK</a></li>
-                <li><a href="#">Whatsapp</a></li>
-                <li><a href="#">Telegram</a></li>
-                <li><a href="#">Kwork</a></li>
+                {% for social in social_link %}
+                    <li><a href="{{ social.link }}">{{ social.title }}</a></li>
+                {% endfor %}
             </ul>
         </div>
         <div class="slider__shape">
@@ -72,10 +71,10 @@
             <div class="row justify-content-center">
                 <div class="col-xl-7 col-lg-10">
                     <div class="section__title mb-70 text-center">
-                        <h3>Чем мы занимаемся<span>?</span></h3>
+                        <h3>Что мы делаем<span>?</span></h3>
                         <p></p>
                         <div class="back-text">
-                            <h2>Услуги</h2>
+                            <h2>РАЗРАБОТКА</h2>
                         </div>
                     </div>
                 </div>
@@ -91,13 +90,6 @@
                             <p>Размещение рекламных объявлений, которые показываются при поиске в поисковиках, и соответствуют набранному запросу пользователя.
                             </p>
                         </div>
-                        <div class="service__contact text-center"
-                             data-background="/static/assets/img/service/service-bg.jpg">
-                            <div>
-                                <p>SEO-продвжиение нацелено на вывод вашего сайта на первые строчки в поисковиках. Сайт должен приводить вам новых клиентов и приносить прибыль! Ведь клиенты ищут вас и ваши услуги (товары) в интернете, а находят ваших конкурентов и покупают у них.</p>
-                                <a class="smooth-scroll" href="#contact">Связаться с нами</a>
-                            </div>
-                        </div>
                     </div>
                 </div>
                 <div class="col-xl-6 col-lg-6">
@@ -108,13 +100,6 @@
                         <div class="service__content">
                             <h4>Копирайтинг</h4>
                             <p>Создание различного контента: изображения, видео, анимации и текста для ваших ресурсов. Ведение социальных сетей.</p>
-                        </div>
-                        <div class="service__contact text-center"
-                             data-background="/static/assets/img/service/service-bg.jpg">
-                            <div>
-                                <p>Каждому сайту требуется уникальный продающий текст. Уникальность текста обеспечивает благосклонность поисковых систем (Яндекс и Google терпеть не могут плагиата). Продающие тексты пишутся исключительно для людей. Такие тексты должны быть побуждающими к действию.</p>
-                                <a class="smooth-scroll" href="#contact">Связаться с нами</a>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -127,13 +112,6 @@
                             <h4>Дизайн</h4>
                             <p>Создание уникального дизайна для сайтов, интерфейсов для приложений, брендбуков, в частности логотипов, визиток и прочего.</p>
                         </div>
-                        <div class="service__contact text-center"
-                             data-background="/static/assets/img/service/service-bg.jpg">
-                            <div>
-                                <p>Дизайн - это не только красивая и современная картина. Дизайн - это удобство пользователя в работе с сайтом или интерфейсом, это также и релевантность его запросам. Хороший дизайн содержит в себе максимальное удобство пользователя при работе с продуктам, интуаитивно понятную навигацию, а также гармоничные элементы сайта - кнопки, заголовки и т.д. - которые имеют определённый размер и цвет.</p>
-                                <a class="smooth-scroll" href="#contact">Связаться с нами</a>
-                            </div>
-                        </div>
                     </div>
                 </div>
                 <div class="col-xl-6 col-lg-6">
@@ -145,13 +123,6 @@
                             <h4>Разработка</h4>
                             <p>Создание сайтов, веб-приложений, мобильных приложений и другого программного обеспечения, необходимого для осуществления потребностей клиента.</p>
                         </div>
-                        <div class="service__contact text-center"
-                             data-background="/static/assets/img/service/service-bg.jpg">
-                            <div>
-                                <p>Мы можем разработать абсолютно любой проект с вашим готовым ТЗ будь то информационный или новостной портал или абсолютно новый проект, аналогов которого нет на рынке! Поделитесь с нами вашей идеей и мы поможем её реализовать. Также мы можем помочь вам с разработкой технического задания для вашего сайта.</p>
-                                <a class="smooth-scroll" href="#contact">Связаться с нами</a>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -162,16 +133,18 @@
     <div id="portfolio" class="portfolio__area">
         <div class="container-fluid p-0">
             <div class="row no-gutters">
+                {% for serv in work %}
                 <div class="col-xl-4 col-lg-4 col-md-6">
                     <div class="portfolio__item">
-                        <img src="" alt="">
-                        <a class="portfolio__overlay popup-image" href="">
+                        <img src="{{ serv.image.url }}" alt="{{ serv.title }}">
+                        <a class="portfolio__overlay popup-image" href="{% url 'index:portfolio_detail' serv.id %}">
                             <div class="portfolio__overlay-icon">
                                 <i class="fal fa-plus"></i>-
                             </div>
                         </a>
                     </div>
                 </div>
+                {% endfor %}
             </div>
         </div>
     </div>
@@ -243,13 +216,13 @@
                         <div class="row">
                             <div class="col-xl-6 col-lg-6 col-md-6">
                                 <div class="award__item mb-40">
-                                    <h4>2010 / Начало пути </h4>
-                                    <p>Объединение команды интузиастов совместной целью, создания веб проектов</p>
+                                    <h4>2012 / Начало пути </h4>
+                                    <p>Объединение команды одной совместной целью, создания веб проектов</p>
                                 </div>
                             </div>
                             <div class="col-xl-6 col-lg-6 col-md-6">
                                 <div class="award__item mb-40">
-                                    <h4>2013 / Открытие своей веб школы</h4>
+                                    <h4>2013 / Открытие набора</h4>
                                     <p>Набирая junior разработчиков, мы обучаем их работать с боевыми проектами</p>
                                 </div>
                             </div>
@@ -262,7 +235,7 @@
                             <div class="col-xl-6 col-lg-6 col-md-6">
                                 <div class="award__item mb-40">
                                     <h4>2022 / 12 лет в разработке</h4>
-                                    <p>12 лет мы реализуем ваши проекты</p>
+                                    <p>10 лет мы реализуем ваши проекты</p>
                                 </div>
                             </div>
                         </div>
@@ -290,88 +263,93 @@
     <!-- testimonial area start  -->
     <div class="testimonial__area grey-bg fix pt-120 pb-80">
         <div class="container">
-            <div class="testimonial__active">
-                {% for answer in reward %}
-                    <div class="testimonial__item">
-                        <div class="testimonial__img position-relative mb-30">
-                            <img src="/static/assets/img/testimonial/testimonial-border.png" alt="">
-                            <img src="{{ answer.image.url }}" alt="{{ answer.title }}" height="300" width="260" class="center-img round">
+            <div class="section__title mb-70 text-center">
+                <h3>Отзывы о нас</h3>
+            </div>
+                <div class="testimonial__active">
+                    {% for serv in answer  %}
+                        <div class="testimonial__item">
+                            <div class="testimonial__img position-relative mb-30">
+                                <img src="/static/assets/img/testimonial/testimonial-border.png" alt="">
+                                <img src="{{ serv.image.url }}" alt="{{ serv.title }}" height="300" width="260" class="center-img round">
+                            </div>
+                            <div class="testimonial__content mb-30">
+                                <h3>{{ serv.title }}</h3>
+                                <p>{{ serv.content }}</p>
+                                <h4>{{ serv.full_name }}</h4>
+                                <span>- {{ serv.company }}</span>
+                            </div>
                         </div>
-                        <div class="testimonial__content mb-30">
-                            <h3>{{ answer.title }}</h3>
-                            <p>{{ answer.content }}</p>
-                            <h4>{{ answer.full_name }}</h4>
-                            <span>- {{ answer.company }}</span>
-                        </div>
-                    </div>
-                {% endfor %}
+                    {% endfor %}
+                </div>
             </div>
         </div>
-    </div>
-    <!-- testimonial area end -->
-    <!-- contact area start  -->
-    <div id="contact" class="contact__area grey-bg pb-120">
-        <div class="contact__inner white-bg pt-120">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-xl-7 col-lg-10">
-                        <div class="section__title mb-70 text-center">
-                            <h3>Обратная связь<span>.</span></h3>
-                            <p>Мы открыты для сотрудничества, если у вас есть идея, мы помомжем ее реализовать, заполните поля и мы обязательно с вами свяжемся, спасибо что выбрали нас!</p>
-                            <div class="back-text">
-                                <h2 class="color-grey">контакты</h2>
+        <!-- testimonial area end -->
+        <!-- contact area start  -->
+        <div id="contact" class="contact__area grey-bg pb-120">
+            <div class="contact__inner white-bg pt-120">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-xl-7 col-lg-10">
+                            <div class="section__title mb-70 text-center">
+                                <h3>Обратная связь<span>.</span></h3>
+                                <p>Мы открыты для сотрудничества, если у вас есть идея, мы помомжем ее реализовать, заполните поля и мы обязательно с вами свяжемся, спасибо что выбрали нас!</p>
+                                <div class="back-text">
+                                    <h2 class="color-grey">контакты</h2>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="contact__form pb-100">
-                    <form action="#">
-                        <div class="row">
-                            <div class="col-xl-6 col-lg-6 col-md-6">
-                                <div class="input-field">
-                                    <input type="text" placeholder="ваше имя">
-                                    <i class="fal fa-user"></i>
+                    <div class="contact__form pb-100">
+                        <form action="{% url 'index:create' %}" method="POST">
+                            {% csrf_token %}
+                            <div class="row">
+                                <p>{{ form.errors }}</p>
+                                <div class="col-xl-6 col-lg-6 col-md-6">
+                                    <div class="input-field">
+                                        <input type="text" name="full_name" placeholder="ваше имя">
+                                        <i class="fal fa-user"></i>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-xl-6 col-lg-6 col-md-6">
-                                <div class="input-field">
-                                    <input type="text" placeholder="электронная почта">
-                                    <i class="fal fa-envelope"></i>
+                                <div class="col-xl-6 col-lg-6 col-md-6">
+                                    <div class="input-field">
+                                        <input type="text" name="email" placeholder="электронная почта">
+                                        <i class="fal fa-envelope"></i>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-xl-6 col-lg-6 col-md-6">
-                                <div class="input-field">
-                                    <input type="number" placeholder="Номер телефона">
-                                    <i class="fal fa-phone"></i>
+                                <div class="col-xl-6 col-lg-6 col-md-6">
+                                    <div class="input-field">
+                                        <input type="text" name="phone" placeholder="Номер телефона">
+                                        <i class="fal fa-phone"></i>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-xl-6 col-lg-6 col-md-6">
-                                <div class="input-field">
-                                    <select required>
-                                        <option value="" disabled selected>Тип проекта</option>
-                                        <option value="0">Графический дизайн</option>
-                                        <option value="1">Разработка сайта</option>
-                                        <option value="2">Администрирование сервера</option>
-                                        <option value="3">SEO</option>
-                                    </select>
-                                    <i class="fal fa-arrow-down"></i>
+                                <div class="col-xl-6 col-lg-6 col-md-6">
+                                    <div class="input-field">
+                                        <select required name="type_project">
+                                            <option value="" disabled selected>Тип проекта</option>
+                                            <option value="0">Графический дизайн</option>
+                                            <option value="1">Разработка сайта</option>
+                                            <option value="2">Администрирование сервера</option>
+                                            <option value="3">SEO</option>
+                                        </select>
+                                        <i class="fal fa-arrow-down"></i>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-xl-12 col-lg-12 col-md-12">
-                                <div class="input-field">
-                                        <textarea name="message" placeholder="описание" id="message" cols="30"
+                                <div class="col-xl-12 col-lg-12 col-md-12">
+                                    <div class="input-field">
+                                        <textarea name="content" placeholder="описание" id="message" cols="30"
                                                   rows="10"></textarea>
-                                    <i class="fal fa-edit"></i>
+                                        <i class="fal fa-edit"></i>
+                                    </div>
+                                </div>
+                                <div class="contact__btn">
+                                    <button type="submit" class="m-btn  red-btn theme-color">Отправить</button>
                                 </div>
                             </div>
-                            <div class="contact__btn">
-                                <a href="#" class="m-btn  red-btn theme-color">Отправить</a>
-                            </div>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- contact area end -->
+        <!-- contact area end -->
 {% endblock %}
