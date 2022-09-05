@@ -1,5 +1,9 @@
 {% extends 'layout/layout.html' %}
 
+{% block title %}
+    KILLNET73 - Веб студия готовых бизнес решений и разработки программного обеспечения и сайтов
+{% endblock %}
+
 {% block content %}
     <!-- slider area start  -->
     <div id="slider" class="slider__area red-bg position-relative fix">
@@ -134,16 +138,16 @@
         <div class="container-fluid p-0">
             <div class="row no-gutters">
                 {% for serv in work %}
-                <div class="col-xl-4 col-lg-4 col-md-6">
-                    <div class="portfolio__item">
-                        <img src="{{ serv.image.url }}" alt="{{ serv.title }}">
-                        <a class="portfolio__overlay popup-image" href="{% url 'index:portfolio_detail' serv.id %}">
-                            <div class="portfolio__overlay-icon">
-                                <i class="fal fa-plus"></i>-
-                            </div>
-                        </a>
+                    <div class="col-xl-4 col-lg-4 col-md-6">
+                        <div class="portfolio__item">
+                            <img src="{{ serv.image.url }}" href="{% url 'index:portfolio_detail' serv.id %}" alt="{{ serv.title }}">
+                            <a class="portfolio__overlay" href="{% url 'index:portfolio_detail' serv.id %}">
+                                <div class="portfolio__overlay-icon">
+                                    <i class="fal fa-plus"></i>
+                                </div>
+                            </a>
+                        </div>
                     </div>
-                </div>
                 {% endfor %}
             </div>
         </div>
@@ -266,90 +270,90 @@
             <div class="section__title mb-70 text-center">
                 <h3>Отзывы о нас</h3>
             </div>
-                <div class="testimonial__active">
-                    {% for serv in answer  %}
-                        <div class="testimonial__item">
-                            <div class="testimonial__img position-relative mb-30">
-                                <img src="/static/assets/img/testimonial/testimonial-border.png" alt="">
-                                <img src="{{ serv.image.url }}" alt="{{ serv.title }}" height="300" width="260" class="center-img round">
-                            </div>
-                            <div class="testimonial__content mb-30">
-                                <h3>{{ serv.title }}</h3>
-                                <p>{{ serv.content }}</p>
-                                <h4>{{ serv.full_name }}</h4>
-                                <span>- {{ serv.company }}</span>
-                            </div>
+            <div class="testimonial__active">
+                {% for serv in answer  %}
+                    <div class="testimonial__item">
+                        <div class="testimonial__img position-relative mb-30">
+                            <img src="/static/assets/img/testimonial/testimonial-border.png" alt="">
+                            <img src="{{ serv.image.url }}" alt="{{ serv.title }}" height="300" width="260" class="center-img round">
                         </div>
-                    {% endfor %}
-                </div>
+                        <div class="testimonial__content mb-30">
+                            <h3>{{ serv.title }}</h3>
+                            <p>{{ serv.content }}</p>
+                            <h4>{{ serv.full_name }}</h4>
+                            <span>- {{ serv.company }}</span>
+                        </div>
+                    </div>
+                {% endfor %}
             </div>
         </div>
-        <!-- testimonial area end -->
-        <!-- contact area start  -->
-        <div id="contact" class="contact__area grey-bg pb-120">
-            <div class="contact__inner white-bg pt-120">
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-xl-7 col-lg-10">
-                            <div class="section__title mb-70 text-center">
-                                <h3>Обратная связь<span>.</span></h3>
-                                <p>Мы открыты для сотрудничества, если у вас есть идея, мы помомжем ее реализовать, заполните поля и мы обязательно с вами свяжемся, спасибо что выбрали нас!</p>
-                                <div class="back-text">
-                                    <h2 class="color-grey">контакты</h2>
-                                </div>
+    </div>
+    <!-- testimonial area end -->
+    <!-- contact area start  -->
+    <div id="contact" class="contact__area grey-bg pb-120">
+        <div class="contact__inner white-bg pt-120">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-xl-7 col-lg-10">
+                        <div class="section__title mb-70 text-center">
+                            <h3>Обратная связь<span>.</span></h3>
+                            <p>Мы открыты для сотрудничества, если у вас есть идея, мы помомжем ее реализовать, заполните поля и мы обязательно с вами свяжемся, спасибо что выбрали нас!</p>
+                            <div class="back-text">
+                                <h2 class="color-grey">контакты</h2>
                             </div>
                         </div>
                     </div>
-                    <div class="contact__form pb-100">
-                        <form action="{% url 'index:create' %}" method="POST">
-                            {% csrf_token %}
-                            <div class="row">
-                                <p>{{ form.errors }}</p>
-                                <div class="col-xl-6 col-lg-6 col-md-6">
-                                    <div class="input-field">
-                                        <input type="text" name="full_name" placeholder="ваше имя">
-                                        <i class="fal fa-user"></i>
-                                    </div>
+                </div>
+                <div class="contact__form pb-100">
+                    <form action="{% url 'index:create' %}" method="POST">
+                        {% csrf_token %}
+                        <div class="row">
+                            <p>{{ form.errors }}</p>
+                            <div class="col-xl-6 col-lg-6 col-md-6">
+                                <div class="input-field">
+                                    <input type="text" name="full_name" placeholder="ваше имя">
+                                    <i class="fal fa-user"></i>
                                 </div>
-                                <div class="col-xl-6 col-lg-6 col-md-6">
-                                    <div class="input-field">
-                                        <input type="text" name="email" placeholder="электронная почта">
-                                        <i class="fal fa-envelope"></i>
-                                    </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6">
+                                <div class="input-field">
+                                    <input type="text" name="email" placeholder="электронная почта">
+                                    <i class="fal fa-envelope"></i>
                                 </div>
-                                <div class="col-xl-6 col-lg-6 col-md-6">
-                                    <div class="input-field">
-                                        <input type="text" name="phone" placeholder="Номер телефона">
-                                        <i class="fal fa-phone"></i>
-                                    </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6">
+                                <div class="input-field">
+                                    <input type="text" name="phone" placeholder="Номер телефона">
+                                    <i class="fal fa-phone"></i>
                                 </div>
-                                <div class="col-xl-6 col-lg-6 col-md-6">
-                                    <div class="input-field">
-                                        <select required name="type_project">
-                                            <option value="" disabled selected>Тип проекта</option>
-                                            <option value="0">Графический дизайн</option>
-                                            <option value="1">Разработка сайта</option>
-                                            <option value="2">Администрирование сервера</option>
-                                            <option value="3">SEO</option>
-                                        </select>
-                                        <i class="fal fa-arrow-down"></i>
-                                    </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6">
+                                <div class="input-field">
+                                    <select required name="type_project">
+                                        <option value="" disabled selected>Тип проекта</option>
+                                        <option value="0">Графический дизайн</option>
+                                        <option value="1">Разработка сайта</option>
+                                        <option value="2">Администрирование сервера</option>
+                                        <option value="3">SEO</option>
+                                    </select>
+                                    <i class="fal fa-arrow-down"></i>
                                 </div>
-                                <div class="col-xl-12 col-lg-12 col-md-12">
-                                    <div class="input-field">
+                            </div>
+                            <div class="col-xl-12 col-lg-12 col-md-12">
+                                <div class="input-field">
                                         <textarea name="content" placeholder="описание" id="message" cols="30"
                                                   rows="10"></textarea>
-                                        <i class="fal fa-edit"></i>
-                                    </div>
-                                </div>
-                                <div class="contact__btn">
-                                    <button type="submit" class="m-btn  red-btn theme-color">Отправить</button>
+                                    <i class="fal fa-edit"></i>
                                 </div>
                             </div>
-                        </form>
-                    </div>
+                            <div class="contact__btn">
+                                <button type="submit" class="m-btn  red-btn theme-color">Отправить</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
-        <!-- contact area end -->
+    </div>
+    <!-- contact area end -->
 {% endblock %}
