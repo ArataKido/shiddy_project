@@ -1,0 +1,46 @@
+{% extends 'theme/layout/layout.html' %}
+
+{% block content %}
+    <!-- Start Breadcrumb
+    ============================================= -->
+    <div class="breadcrumb-area bg-gradient text-center">
+        <!-- Fixed BG -->
+        <div class="fixed-bg" style="background-image: url(/static/assets/img/shape/bg-4.png);"></div>
+        <!-- Fixed BG -->
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <h1>Error Page</h1>
+                    <ul class="breadcrumb">
+                        <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="#">Pages</a></li>
+                        <li class="active">404</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumb -->
+
+    <!-- Start 404
+    ============================================= -->
+    <div class="error-page-area default-padding">
+        <div class="container">
+            <div class="row align-center">
+                <div class="col-lg-6 thumb">
+                    <img src="/static/assets/img/illustration/404.png" alt="Thumb">
+                </div>
+                <div class="col-lg-6">
+                    <div class="error-box">
+                        <h2>Sorry Page Was Not Found!</h2>
+                        <p>
+                            Household shameless incommode at no objection behaviour. Especially do at he possession insensible sympathize boisterous.
+                        </p>
+                        <a class="btn circle btn-md btn-gradient" href="#">Back to home</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End 404 -->
+{% endblock %}

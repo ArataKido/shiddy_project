@@ -1,0 +1,60 @@
+{% extends 'theme/layout/layout.html' %}
+
+{% block content %}
+    <!-- Start Breadcrumb
+    ============================================= -->
+    <div class="breadcrumb-area bg-gradient text-center">
+        <!-- Fixed BG -->
+        <div class="fixed-bg" style="background-image: url(/static/assets/img/shape/bg-4.png);"></div>
+        <!-- Fixed BG -->
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <h1>Кейс: {{ product.title }}</h1>
+                    <ul class="breadcrumb">
+                        <li><a href="{% url 'index:index' %}"><i class="fas fa-home"></i> Главная</a></li>
+                        <li><a href="{% url 'portfolio:index' %}">Портфолио</a></li>
+                        <li class="active">{{ product.title }}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumb -->
+
+    <!-- Start Blog
+    ============================================= -->
+    <div class="blog-area single full-blog full-blog default-padding">
+        <div class="container">
+            <div class="blog-items">
+                <div class="row">
+                    <div class="blog-content wow fadeInUp col-lg-10 offset-lg-1 col-md-12">
+                        <div class="item">
+
+                            <div class="blog-item-box">
+                                <!-- Start Post Thumb -->
+                                <div class="thumb">
+                                    <a href="#">
+                                        <img src="{{ product.image.url }}" alt="{{ product.title }}">
+                                    </a>
+                                </div>
+                                <!-- Start Post Thumb -->
+
+                                <div class="info">
+                                    <div class="meta">
+                                        <ul>
+                                            <li><i class="fas fa-calendar-alt"></i> {{ product.date }}</li>
+                                            <li>Заказчик <a href="#">{{ product.pricer }}</a></li>
+                                        </ul>
+                                    </div>
+                                    {{ product.description|safe }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Blog -->
+{% endblock %}
