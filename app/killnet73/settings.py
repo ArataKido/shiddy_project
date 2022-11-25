@@ -22,9 +22,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-8&4kgbog-e*r)f3jt1%s*9ezz!o%xfevp$+o-ap#zok_fvnrm4'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -79,8 +79,12 @@ WSGI_APPLICATION = 'killnet73.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': "ailab_db",
+        'USER': "luxar",
+        'PASSWORD': "sYst3m0ps",
+        'HOST': 'db',
+        'PORT': '5432',
     }
 }
 
