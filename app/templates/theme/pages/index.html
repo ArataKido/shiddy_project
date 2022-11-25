@@ -175,9 +175,6 @@
                         <h4>
                             <a href="{% url 'portfolio:portfolio_detail' serv.id %}">{{ serv.title }}</a>
                         </h4>
-                        <p>
-                            {{ serv.description|safe|truncatechars:100 }}
-                        </p>
                         <a href="{% url 'portfolio:portfolio_detail' serv.id %}"><i class="fas fa-arrow-right"></i> Узнать больше</a>
                     </div>
                 </div>
