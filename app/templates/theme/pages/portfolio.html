@@ -1,0 +1,59 @@
+{% extends 'theme/layout/layout.html' %}
+
+{% block content %}
+    <!-- Start Breadcrumb
+    ============================================= -->
+    <div class="breadcrumb-area bg-gradient text-center">
+        <!-- Fixed BG -->
+        <div class="fixed-bg" style="background-image: url(/static/assets/img/shape/bg-4.png);"></div>
+        <!-- Fixed BG -->
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <h1>Портфолио</h1>
+                    <ul class="breadcrumb">
+                        <li><a href="{% url 'index:index' %}"><i class="fas fa-home"></i> Главная</a></li>
+                        <li class="active">Портфолио</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumb -->
+
+    <!-- Start Case Studies
+    ============================================= -->
+    <div class="case-studies-area circle-shape-right default-padding bottom-less">
+        <div class="container">
+            <div class="case-items">
+                <div class="row">
+                    <!-- Single Item -->
+                    {% for serv in products %}
+                    <div class="single-item col-lg-4 col-md-6">
+                        <div class="item wow fadeInUp" data-wow-delay="500ms">
+                            <div class="thumb">
+                                <img src="{{ serv.image.url }}" href="{% url 'portfolio:portfolio_detail' serv.id %}" alt="Работа из портфолио {{ serv.title }}">
+                                <div class="overlay">
+                                    <a href="{% url 'portfolio:portfolio_detail' serv.id %}"><i class="fas fa-link"></i></a>
+                                </div>
+                            </div>
+                            <div class="info">
+                                <div class="cats">
+                                    <p>
+                                        Заказчик - {{ serv.pricer }}
+                                    </p>
+                                </div>
+                                <h5>
+                                    <a href="{% url 'portfolio:portfolio_detail' serv.id %}">{{ serv.title }}</a>
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    <!-- End Single Item -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Case Studies -->
+{% endblock %}

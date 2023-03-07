@@ -1,0 +1,39 @@
+<header id="home">
+    <!-- Start Navigation -->
+    <nav class="navbar navbar-default navbar-sticky dark attr-border bootsnav">
+        <div class="container">
+            <!-- Start Header Navigation -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="{% url 'index:index' %}">
+                    <img src="/static/assets/img/logo2.png" style="object-fit: cover; width: 150px" class="logo" alt="Logo">
+                </a>
+            </div>
+            <!-- End Header Navigation -->
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-menu">
+                <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+                    <li class="dropdown">
+                        <a href="{% url 'index:index' %}">Главная</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="{% url 'portfolio:index' %}">Портфолио</a>
+                    </li>
+                    <li><a href="{% url 'case:index' %}">Кейсы студии</a></li>
+                    <li class="dropdown">
+                        <a href="{% url 'blog:blog' %}">Блог</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'social:index' %}">Контакты</a>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div>
+
+    </nav>
+    <!-- End Navigation -->
+
+</header>

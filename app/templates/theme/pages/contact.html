@@ -1,0 +1,97 @@
+{% extends 'theme/layout/layout.html' %}
+
+{% block content %}
+    <!-- Start Breadcrumb
+    ============================================= -->
+    <div class="breadcrumb-area bg-gradient text-center">
+        <!-- Fixed BG -->
+        <div class="fixed-bg" style="background-image: url(/static/assets/img/shape/bg-4.png);"></div>
+        <!-- Fixed BG -->
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <h1>Связаться с нами</h1>
+                    <ul class="breadcrumb">
+                        <li><a href="{% url 'index:index' %}"><i class="fas fa-home"></i> Главная</a></li>
+                        <li class="active">Контакты</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumb -->
+
+    <!-- Start Contact Area
+    ============================================= -->
+    <div id="contact" class="contact-us-area default-padding">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-4 wow fadeInUp address text-light">
+                    <div class="address-items">
+                        <div class="item">
+                            <h4>Юридический адрес</h4>
+                            <div class="info">
+                                <p>Самарская область,<br> Самара, Московское шоссе, 55<br>13 этаж 13 офис </p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <h4>Контакты</h4>
+                            <div class="info">
+                                <ul>
+                                    <li>Telegram: <span><a href="https://t.me/ailab73">@killnet73</a></span></li>
+                                    <li>GitHub: <span><a href="https://github.com/WebDev-AiLab">WebDev-KillNet</a></span></li>
+                                    <li>Email: <span><a href="mailto:admin@ailab73.ru">admin@ailab73.ru</a></span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-8 wow fadeInLeft contact-form">
+                    <h2>Есть идея? <strong>Мы поможем реализовать ее в реальность!</strong></h2>
+                    <p>{{ forms.error }}</p>
+                    <form action="{% url 'social:create' %}" method="POST">
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <input class="form-control" id="name" name="full_name" placeholder="Ф.И.О" type="text">
+                                    <span class="alert-error"></span>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <input class="form-control" id="email" name="email" placeholder="Электронная почта" type="email">
+                                    <span class="alert-error"></span>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <input class="form-control" id="phone" name="phone" placeholder="Номер телефона" type="text">
+                                    <span class="alert-error"></span>
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="form-group comments">
+                                    <textarea class="form-control" id="content" name="content" placeholder="Коротко расскажите о вашем проекте *"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <button type="submit" name="submit" id="submit">
+                                    Связаться с нами <i class="fa fa-paper-plane"></i>
+                                </button>
+                            </div>
+                            <!-- Alert Message -->
+                            <div class="col-lg-12 alert-notification">
+                                <div id="message" class="alert-msg"></div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- End Contact -->
+{% endblock %}
